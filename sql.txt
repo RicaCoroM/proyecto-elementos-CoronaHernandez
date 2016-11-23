@@ -1,0 +1,2 @@
+create table mensaje(id integer primary key auto_increment,
+                     titulo varchar(20),cuerpo varchar(200));

@@ -1,0 +1,19 @@
+create table mensaje(id integer primary key auto_increment,
+                     titulo varchar(20),cuerpo varchar(200));
+
+CREATE TABLE departamento(id integer primary key auto_increment, nombre varchar(30));
+
+CREATE TABLE empleado(id integer primary key auto_increment, id_depto integer, nombre varchar(40), 
+			sueldo float, foreign key(id_depto) references departamento(id));
+
+create table estacionamiento(id integer primary key auto_increment, tiempo timestamp);
+
+create table cliente (id integer primary key auto_increment,id_estacionamiento integer, pago float,foreign key (id_estacionamiento) references estacionamiento(id));
+
+SELECT * FROM departamento;
+SELECT * FROM empleado;
+
+CREATE TABLE direccion(id integer primary key auto_increment, numero integer,cp integer,colonia varchar(40));
+
+CREATE TABLE persona(id integer primary key auto_increment, nombre varchar(40),id_direccion integer, telefono varchar (40), foreign key (id_direccion),
+references direccion(id));
